@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>for bhen 💙</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Caveat:wght@500;700&display=swap');
+
+  *{margin:0;padding:0;box-sizing:border-box}
+
+  :root{
+    --bg:#0a0810;
+    --panel:rgba(255,255,255,.045);
+    --line:rgba(255,255,255,.09);
+    --pink:#ff8fb1;
+    --pink2:#b14bff;
+    --lav:#c9a7ff;
+    --blue:#7cc4ff;
+    --txt:#f2ecf3;
+    --dim:#9d90a8;
+  }
+
+  body{
+    background:var(--bg);
+    color:var(--txt);
+    font-family:'Quicksand',sans-serif;
+    overflow-x:hidden;
+  }
+
+  /* subtle starfield */
+  .stars{position:fixed;inset:0;pointer-events:none;z-index:0}
+  .st{position:absolute;background:#fff;border-radius:50%;animation:tw 4s ease-in-out infinite}
+  @keyframes tw{0%,100%{opacity:.12}50%{opacity:.75}}
+
+  /* soft glow blobs */
+  .blob{position:fixed;border-radius:50%;filter:blur(100px);z-index:0;opacity:.22}
+  .b1{width:400px;height:400px;background:#ff2e88;top:-120px;right:-100px}
+  .b2{width:360px;height:360px;background:#7a3cff;bottom:-100px;left:-120px}
+  .b3{width:320px;height:320px;background:#00b4ff;top:50%;right:-140px}
+  .b4{width:280px;height:280px;background:#ff5ca8;top:20%;left:-130px}
+
+  .wrap{position:relative;z-index:2;max-width:860px;margin:0 auto;padding:0 22px}
+
+  header{padding:110px 0 60px;text-align:center}
+  .hi{font-size:64px;animation:bob 3s ease-in-out infinite;
+    filter:drop-shadow(0 0 22px rgba(255,143,177,.55))}
+  @keyframes bob{0%,100%{transform:translateY(0)rotate(-6deg)}50%{transform:translateY(-12px)rotate(6deg)}}
+  h1{font-family:'Caveat',cursive;font-size:clamp(46px,9vw,76px);line-height:1.1;margin-top:14px}
+  h1 span{background:linear-gradient(90deg,var(--pink),var(--lav),var(--blue));
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .tagline{color:var(--dim);font-size:18px;margin-top:16px;font-weight:500}
+
+  section{padding:56px 0}
+
+  h2{
+    font-family:'Caveat',cursive;font-size:38px;text-align:center;margin-bottom:32px;
+    color:var(--pink);text-shadow:0 0 24px rgba(255,143,177,.35);
+  }
+  h2::after{content:' 💗';font-size:24px}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+  .card{
+    background:var(--panel);backdrop-filter:blur(14px);
+    border:1px solid var(--line);border-radius:22px;padding:28px 24px;
+    text-align:center;transition:.35s;box-shadow:0 6px 26px rgba(0,0,0,.42);
+    position:relative;overflow:hidden;
+  }
+  .card::before{
+    content:'';position:absolute;top:0;left:0;right:0;height:2px;
+    background:linear-gradient(90deg,var(--pink),var(--pink2),var(--blue));
+    transform:scaleX(0);transition:.35s;
+  }
+  .card:hover{transform:translateY(-8px);scale:1.02;border-color:rgba(255,143,177,.4);
+    box-shadow:0 14px 40px rgba(255,46,136,.2)}
+  .card:hover::before{transform:scaleX(1)}
+  .card .e{font-size:42px;margin-bottom:12px;display:block;
+    filter:drop-shadow(0 0 14px rgba(255,143,177,.45))}
+  .card h3{font-family:'Caveat',cursive;font-size:27px;margin-bottom:8px;color:var(--txt)}
+  .card p{color:var(--dim);font-size:15px;line-height:1.65;font-weight:500}
+
+  .letter{
+    background:var(--panel);backdrop-filter:blur(14px);
+    border-radius:26px;padding:40px 34px;line-height:1.95;font-size:17px;
+    border:1px solid var(--line);box-shadow:0 8px 34px rgba(0,0,0,.45);position:relative;
+  }
+  .letter::before{content:'💌';position:absolute;top:-26px;right:30px;font-size:44px;
+    filter:drop-shadow(0 0 16px rgba(255,143,177,.5))}
+  .letter p{margin-bottom:16px;color:#e6dfe8}
+  .letter p:last-child{margin-bottom:0}
+  .sig{font-family:'Caveat',cursive;font-size:32px;color:var(--pink);text-align:right;margin-top:22px}
+
+  .tl{position:relative;padding-left:38px}
+  .tl::before{content:'';position:absolute;left:13px;top:8px;bottom:8px;width:3px;
+    background:linear-gradient(var(--pink),var(--lav),var(--blue));border-radius:3px;
+    box-shadow:0 0 14px rgba(255,143,177,.4)}
+  .item{position:relative;margin-bottom:34px}
+  .item::before{
+    content:'';position:absolute;left:-32px;top:6px;width:15px;height:15px;
+    background:#0a0810;border:3px solid var(--pink);border-radius:50%;
+    box-shadow:0 0 14px rgba(255,143,177,.7);
+  }
+  .item h4{font-family:'Caveat',cursive;font-size:26px;margin-bottom:5px}
+  .item p{color:var(--dim);font-size:15.5px;line-height:1.7;font-weight:500}
+
+  .promise{
+    background:linear-gradient(135deg,rgba(255,46,136,.1),rgba(122,60,255,.1));
+    border-radius:26px;padding:42px 32px;text-align:center;
+    border:1px solid var(--line);box-shadow:0 8px 34px rgba(0,0,0,.4);
+  }
+  .promise ul{list-style:none;display:inline-block;text-align:left}
+  .promise li{font-size:17.5px;padding:11px 0;font-weight:600;color:#e6dfe8}
+  .promise li::before{content:'✓';color:var(--pink);font-weight:800;margin-right:13px;font-size:19px}
+
+  .btn{
+    display:inline-block;margin-top:24px;padding:15px 42px;border-radius:50px;
+    background:linear-gradient(90deg,var(--pink),var(--pink2));color:#0a0810;
+    text-decoration:none;font-weight:700;font-size:17px;border:none;cursor:pointer;
+    font-family:'Quicksand',sans-serif;box-shadow:0 8px 26px rgba(255,46,136,.4);
+    transition:.3s;
+  }
+  .btn:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 14px 36px rgba(255,46,136,.6)}
+
+  .secret{margin-top:20px}
+  .secret .btn{background:rgba(255,255,255,.05);color:var(--pink);
+    border:2px solid rgba(255,143,177,.55);box-shadow:none}
+  .secret .btn:hover{background:rgba(255,143,177,.12);box-shadow:0 0 26px rgba(255,46,136,.3)}
+  #secretMsg{margin-top:22px;font-family:'Caveat',cursive;font-size:31px;color:var(--lav);
+    display:none;animation:fade .7s}
+
+  footer{text-align:center;padding:44px 0 50px;color:var(--dim);font-size:15px;font-weight:500}
+  .rv{opacity:0;transform:translateY(24px);transition:.7s}
+  .rv.in{opacity:1;transform:none}
+  @keyframes fade{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:none}}
+
+  @media(max-width:600px){ header{padding:80px 0 40px} .letter{padding:30px 22px} }
+</style>
+</head>
+<body>
+
+<div class="stars" id="stars"></div>
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div>
+
+<div class="wrap">
+
+<header class="rv">
+  <div class="hi">💙</div>
+  <h1>hey bhen, this is <span>for u</span></h1>
+  <p class="tagline">a tiny corner of the internet, made by someone who thinks about u a lot</p>
+</header>
+
+<section class="rv">
+  <h2>why i made this</h2>
+  <div class="letter">
+    <p>so u always know — even when the words don't come out right, even when
+       everything's quiet, even on the days i mess up and say the wrong thing —
+       u matter to me. a lot. more than i know how to say out loud.</p>
+
+    <p>i'm not great with the serious stuff. i overthink everything, i say too little
+       or too much, and i apologize when it's not even my fault. but i wanted
+       to try here, where i can take my time.</p>
+
+    <p>Miss, this is just me, being honest, for once. 💗</p>
+
+    <div class="sig">— ayaan</div>
+  </div>
+</section>
+
+<section class="rv">
+  <h2>things that are ours</h2>
+  <div class="grid">
+    <div class="card">
+      <span class="e">🚗</span>
+      <h3>The Car Ride</h3>
+      <p>baji, ur head on my shoulder, mine on top of urs, holding hands,
+         and neither of the moms noticed. thirty seconds that felt
+         like a whole year.</p>
+    </div>
+    <div class="card">
+      <span class="e">🚐</span>
+      <h3>The Same Van</h3>
+      <p>when i left my old school, you got in the same van i used to take.
+         maybe next year you'll be in mine.</p>
+    </div>
+    <div class="card">
+      <span class="e">🖥️</span>
+      <h3>The Build</h3>
+      <p>the pc, the setup, the 5090 dream. u said prove it, bhen.
+         this is me proving it. kinda.</p>
+    </div>
+    <div class="card">
+      <span class="e">🎮</span>
+      <h3>The Minecraft Days</h3>
+      <p>one of us playing, one of us watching, arguing over whose turn
+         it is to build. same as always.</p>
+    </div>
+    <div class="card">
+      <span class="e">💬</span>
+      <h3>27 Days</h3>
+      <p>the quiet ones. the ones where i didn't text first but wanted to
+         so bad. baji, i'm really glad ur back.</p>
+    </div>
+    <div class="card">
+      <span class="e">📝</span>
+      <h3>The Journal</h3>
+      <p>the week i wrote down everything so u wouldn't miss any of it.
+         turns out i missed u more than i wrote down.</p>
+    </div>
+  </div>
+</section>
+
+<section class="rv">
+  <h2>how it started</h2>
+  <div class="tl">
+    <div class="item">
+      <h4>the first fight</h4>
+      <p>i didn't do anything wrong but i was really hurt. and the weird part?
+         i kept thinking about how to make it better instead of how i felt.</p>
+    </div>
+    <div class="item">
+      <h4>the website</h4>
+      <p>i made you a whole website once and somehow i was the one apologizing.
+         that's just me, being me about you.</p>
+    </div>
+    <div class="item">
+      <h4>the quiet week</h4>
+      <p>the hardest thing i did was stop texting. not because i didn't want to —
+         because i wanted u to be okay more than i wanted to hear from u.</p>
+    </div>
+    <div class="item">
+      <h4>right now</h4>
+      <p>u visited. it was really good. and i'm building u a website instead
+         of sleeping. some things don't change. 💗</p>
+    </div>
+  </div>
+</section>
+
+<section class="rv">
+  <h2>my promises</h2>
+  <div class="promise">
+    <ul>
+      <li>i'll tell u when i'm upset, instead of going quiet for days</li>
+      <li>i'll stop apologizing for things that aren't my fault</li>
+      <li>i'll be better at saying the nice things out loud</li>
+      <li>i'll keep building the website until it makes u smile, Miss</li>
+      <li>i'll be here. always. even when it's quiet.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="rv" style="text-align:center">
+  <h2>one more thing</h2>
+  <p style="color:var(--dim);font-size:17px;font-weight:500;margin-bottom:8px">
+    there's something i only said to myself at 2am.<br>press the button.
+    only if u wanna.
+  </p>
+  <div class="secret">
+    <button class="btn" onclick="showIt()">🤫 open it</button>
+    <div id="secretMsg">
+      u make the quiet feel less quiet, Miss.<br>
+      that's the whole thing. that's it.
+    </div>
+  </div>
+</section>
+
+<footer>
+  made by hand, at 2am, with too much feelings 💗
+</footer>
+
+</div>
+
+<script>
+  // starfield
+  const st=document.getElementById('stars');
+  for(let i=0;i<70;i++){
+    const s=document.createElement('div');
+    s.className='st';
+    const sz=(Math.random()*2+1)+'px';
+    s.style.width=sz; s.style.height=sz;
+    s.style.left=Math.random()*100+'%';
+    s.style.top=Math.random()*100+'%';
+    s.style.animationDuration=(2.5+Math.random()*4)+'s';
+    s.style.animationDelay=(-Math.random()*6)+'s';
+    st.appendChild(s);
+  }
+
+  // reveal
+  const io=new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+  },{threshold:.1});
+  document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+
+  // secret
+  function showIt(){
+    const m=document.getElementById('secretMsg');
+    m.style.display='block';
+    m.style.animation='fade .7s';
+    document.querySelector('.secret .btn').style.display='none';
+  }
+</script>
+</body>
+</html>
